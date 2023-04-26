@@ -62,5 +62,5 @@ Use the returned list to display whatever you want to do
       </div>
 ```
 
-<br>
-![example.gif](https://github.com/jacoobia/useSearchableList/blob/master/.media/img_0.gif)
+
+![example](https://github.com/jacoobia/useSearchableList/blob/master/.media/img_0.gif)
