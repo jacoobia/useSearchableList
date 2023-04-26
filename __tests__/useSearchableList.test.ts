@@ -26,7 +26,7 @@ describe('useSearchableList', () => {
         expect(result.current[0]).toEqual([{ firstname: 'Foo', surname: 'Bar' }]);
     });
 
-    it('should filter data based on search term with debounce', () => {
+    it('should filter data based on search term with debounce, wait for debounce', () => {
         const { result } = renderHook(() =>
             useSearchableList<exampleType>('firstname', {
                 clearOnEmpty: false,
@@ -43,5 +43,21 @@ describe('useSearchableList', () => {
         setTimeout(() => {
             expect(result.current[0]).toEqual([{ firstname: 'Bruce', surname: 'Wayne' }]);
         }, 101);
+    });
+
+    it('should not data based on search term before debounce has happened', () => {
+        const { result } = renderHook(() =>
+            useSearchableList<exampleType>('firstname', {
+                clearOnEmpty: false,
+                debounce: true,
+                delay: 100
+            })
+        );
+
+        act(() => {
+            result.current[1](example);
+            result.current[2]('Br');
+        });
+        expect(result.current[0]).toEqual(example);
     });
 });
