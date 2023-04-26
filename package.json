@@ -4,6 +4,13 @@
   "description": "A hook to filter an array/list of objects.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "repository": {
+    "url": "https://github.com/jacoobia/useSearchableList.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jacoobia/useSearchableList/issues"
+  },
+  "homepage": "https://github.com/jacoobia/useSearchableList#readme",
   "scripts": {
     "test": "jest",
     "build": "tsc -b"
