@@ -8,7 +8,6 @@ A hook written for a personal project that I decided could be useful to I separa
 
 ## Options
 
-<br>
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | clearOnEmpty | boolean | Should the list be empty if there is no filter value |
@@ -63,4 +62,4 @@ Use the returned list to display whatever you want to do
 ```
 
 
-![example](https://github.com/jacoobia/useSearchableList/blob/master/.media/img_0.gif)
+![example](./.media/img_0.gif)
