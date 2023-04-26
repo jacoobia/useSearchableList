@@ -7,10 +7,12 @@
     "sourceMap": true,
     "noImplicitAny": true,
     "declaration": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "noUncheckedIndexedAccess": true
   },
   "exclude": [
     "node_modules",
     "__tests__",
+    "dist"
   ]
 }
