@@ -63,4 +63,4 @@ Use the returned list to display whatever you want to do
 ```
 
 <br>
-![example.gif](.media/img_0.gif)
+![example.gif](https://github.com/jacoobia/useSearchableList/blob/master/.media/img_0.gif)
