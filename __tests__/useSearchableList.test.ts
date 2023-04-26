@@ -1,5 +1,5 @@
 import { act, renderHook } from '@testing-library/react';
-import useSearchableList from '../src/useSearchableList';
+import useSearchableList from '../src/index';
 
 describe('useSearchableList', () => {
     type exampleType = {
