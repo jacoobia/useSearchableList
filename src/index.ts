@@ -4,12 +4,14 @@ type Primitive = string | number | boolean;
 
 type Props = {
     clearOnEmpty?: boolean;
+    firstLetterCheck?: boolean;
     debounce?: boolean;
     delay?: number;
 };
 
 const defaults: Props = {
     clearOnEmpty: false,
+    firstLetterCheck: true,
     debounce: true,
     delay: 300
 };
@@ -28,7 +30,10 @@ const useSearchableList = <T extends SearchableListItem>(
     property: keyof T,
     props: Props = defaults
 ): UseSearchableListHook<T> => {
-    const { clearOnEmpty, debounce, delay } = useMemo(() => ({ ...defaults, ...props }), [props]);
+    const { clearOnEmpty, firstLetterCheck, debounce, delay } = useMemo(
+        () => ({ ...defaults, ...props }),
+        [props]
+    );
 
     if (!isPrimitive(property)) {
         throw new Error('Invalid property used to filter. Only primitive types are allowed.');
@@ -68,7 +73,7 @@ const useSearchableList = <T extends SearchableListItem>(
     const applyFilter = () => {
         if (searchTerm === '' || searchTerm === undefined) {
             reset();
-        } else if (searchTerm.length === 1) {
+        } else if (searchTerm.length === 1 && firstLetterCheck) {
             const filteredList = origin.filter((element: T) => {
                 const propertyValue = element[property];
                 return (
