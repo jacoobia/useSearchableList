@@ -8,26 +8,27 @@ A hook written for a personal project that I decided could be useful to I separa
 
 ## Options
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| clearOnEmpty | boolean | Should the list be empty if there is no filter value |
-| debounce | boolean | Should the filter list use debounce |
-| delay | number | The delay of the debounce |
+| Name                | Type    | Description                                               |
+| ------------------- | ------- | --------------------------------------------------------- |
+| clearOnEmpty        | boolean | Should the list be empty if there is no filter value      |
+| firstCharacterCheck | boolean | Should the first character entered run a startsWith check |
+| debounce            | boolean | Should the filter list use debounce                       |
+| delay               | number  | The delay of the debounce                                 |
 
 ## Example Usage
 
 Define the hook baseed on the filter property name & optionally set props
 
-```
-  const [people, setPeople, filter] = useSearchableList<Person>("firstname", {
+```typescript
+const [people, setPeople, filter] = useSearchableList<Person>('firstname', {
     debounce: true,
-    delay: 300,
-  });
+    delay: 300
+});
 ```
 
 Call the filter function and pass in a value to filter by
 
-```
+```typescript
   const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     const value: string = event.currentTarget.value;
     filter(value);
@@ -47,19 +48,18 @@ Call the filter function and pass in a value to filter by
 
 Use the returned list to display whatever you want to do
 
-```
-      <div className="PersonList">
-        {people.map((person: Person) => {
-          return (
+```typescript
+<div className='PersonList'>
+    {people.map((person: Person) => {
+        return (
             <PersonProfile
-              firstname={person.firstname}
-              lastname={person.lastname}
-              email={person.email}
+                firstname={person.firstname}
+                lastname={person.lastname}
+                email={person.email}
             />
-          );
-        })}
-      </div>
+        );
+    })}
+</div>
 ```
-
 
 ![example](./.media/img_0.gif)
