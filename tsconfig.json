@@ -4,10 +4,13 @@
     "module": "commonjs",
     "outDir": "./dist",                          
     "rootDir": "./",
+    "typeRoots": ["./node_modules/@types", "./src/@types"],
     "sourceMap": true,
     "noImplicitAny": true,
     "declaration": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "noUncheckedIndexedAccess": true,
+    "noEmit": true
   },
   "include": [
     "./",
