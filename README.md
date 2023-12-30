@@ -21,8 +21,8 @@ Define the hook baseed on the filter property name & optionally set props
 
 ```typescript
 const [people, setPeople, filter] = useSearchableList<Person>('firstname', {
-    debounce: true,
-    delay: 300
+  debounce: true,
+  delay: 300
 });
 ```
 
@@ -62,4 +62,4 @@ Use the returned list to display whatever you want to do
 </div>
 ```
 
-![example](./.media/img_0.gif)
+![example](./.github/example.gif)
