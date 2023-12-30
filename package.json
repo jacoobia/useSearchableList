@@ -1,6 +1,6 @@
 {
   "name": "use-searchable-list",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "description": "A hook to filter an array/list of objects.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
